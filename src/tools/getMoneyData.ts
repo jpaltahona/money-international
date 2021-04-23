@@ -6,6 +6,7 @@ export const getMonetTypeDay = async (type: string, date: string): Promise<Money
   const response: MoneyType = {
     ...data.data,
     date,
+    type,
   };
   return response;
 };

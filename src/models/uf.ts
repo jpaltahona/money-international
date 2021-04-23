@@ -11,5 +11,6 @@ export interface MoneyType{
   // eslint-disable-next-line camelcase
   unidad_medida: string,
   serie: Serie[],
-  date: string
+  date: string,
+  type: string,
 }

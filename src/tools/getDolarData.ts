@@ -13,6 +13,7 @@ export const getDolarDay = async (date: string) :Promise<DolarSave | null> => {
     const response: DolarSave = {
       ...data.data,
       date,
+      type: 'dolar',
     };
     return response;
   } catch (error) {

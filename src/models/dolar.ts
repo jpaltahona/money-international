@@ -3,5 +3,6 @@ export interface Dolar{
   ts: number
 }
 export interface DolarSave extends Dolar {
-  date: string
+  date: string,
+  type: string
 }
