@@ -1,6 +1,6 @@
 import * as database from './database';
 import { Dolar, DolarSave } from '../models/dolar';
-
+import { MoneyType } from '../models/uf';
 /**
  * almacenar monedas en la Base de datos
  * @param dolar
@@ -8,7 +8,7 @@ import { Dolar, DolarSave } from '../models/dolar';
  * @returns saveDateDb
  */
 
-export const saveDateDb = async (dolar: Dolar, collection: string): Promise<any> => {
+export const saveDateDb = async (dolar: Dolar | MoneyType, collection: string): Promise<any> => {
   const db = await database.getDB();
   const insert = await db.collection(collection).insertOne(dolar);
   return insert;
