@@ -1,2 +1,6 @@
 import logger from './tools/logger';
-logger.info('Hello Money!');
+import app from './app';
+
+app.listen(app.get('port'));
+
+logger.info(`server on port ${app.get('port')} `);
