@@ -8,10 +8,16 @@ import { MoneyType } from '../models/uf';
  * @returns saveDateDb
  */
 
-export const saveDateDb = async (dolar: Dolar | MoneyType, collection: string): Promise<any> => {
+export const saveDateDb = async (
+  money: any, collection: string,
+): Promise<any> => {
   const db = await database.getDB();
-  const insert = await db.collection(collection).insertOne(dolar);
-  return insert;
+  const document = await db.collection<DolarSave>(collection)
+    .findOne({ date: money.date, type: money.type });
+  if (!document) {
+    await db.collection(collection).insertOne(money);
+  }
+  return document;
 };
 
 /**
