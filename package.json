@@ -1,0 +1,27 @@
+{
+  "name": "prueba",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development ts-node-dev --debug --respawn ./src/index.ts",
+    "start": "node ./dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.6",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.11",
+    "@types/mongodb": "^3.6.12",
+    "tsc-watch": "^4.2.9",
+    "typescript": "^4.2.4"
+  }
+}
