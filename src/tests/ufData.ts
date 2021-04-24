@@ -4,7 +4,7 @@ import * as managerData from '../tools/saveData';
 
 test('test dolar', async (): Promise<void> => {
   jest.setTimeout(2500);
-  const date: Date = new Date();
+  const date: Date = new Date('2021-3-23');
   const dateNow = formDate.formatDate(date);
   const data = await dataUf.getMonetTypeDay('utm', dateNow);
   await managerData.saveDateDb(data, 'utm');

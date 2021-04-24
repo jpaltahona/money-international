@@ -4,17 +4,15 @@ import * as formatDate from '../tools/formatDate';
 import logger from '../tools/logger';
 
 test('test dolar', async (): Promise<void> => {
-  const date = new Date();
+  const date = new Date('2021-3-23');
   const dateFormat = formatDate.formatDate(date);
   const data = await dolarData.getDolarDay(dateFormat);
-
   if (data) await managerData.saveDateDb(data, 'dolar');
 });
 
 test('test Get money', async (): Promise<void> => {
-  const date = new Date();
+  const date = new Date('2021-3-23');
   const dateFormat = formatDate.formatDate(date);
   const data = await managerData.getDataCollection(dateFormat, 'dolar');
   logger.info(data);
-  expect(data).toBeTruthy();
 });

@@ -14,7 +14,7 @@ export const saveDateDb = async (
   const db = await database.getDB();
   const document = await db.collection<DolarSave>(collection)
     .findOne({ date: money.date, type: money.type });
-  if (!document) {
+  if (document == null) {
     await db.collection(collection).insertOne(money);
   }
   return document;
