@@ -14,8 +14,11 @@ router.get('/:type/:date', async (req, res) => {
 
     await validateMoney(dateFormat, typeMoney);
     const data = await managerData.getDataCollection(dateFormat, typeMoney);
-    logger.error(data);
-    res.status(200).json({ ...data });
+    if (data) {
+      logger.info(data);
+      res.status(200).json({ ...data });
+    }
+    res.status(400).send('error');
   } catch (error) {
     logger.error(error);
     res.status(400).send('error');

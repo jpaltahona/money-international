@@ -1,7 +1,7 @@
-import dolarAPi from './dolar.routes';
+import dolarMoney from './dolar.routes';
 
 const routes = (server: any): void => {
-  server.use('/api/money', dolarAPi);
+  server.use('/api/money', dolarMoney);
 };
 
 export default routes;
